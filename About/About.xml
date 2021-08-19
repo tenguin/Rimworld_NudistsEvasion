@@ -10,11 +10,13 @@ Intense daily training, physical competitions, competitive sports, monster hunts
 
 While there are obvious disadvantages to not having armor or protective clothing, it would be a huge mistake to underestimate the speed, agility, and fighting prowess of these lithe warriors.
 
-When someone is "Fully nude" or wearing "Pants at most" and has the "Required Belief" (Meme/Precept/or None), they will gain:
+When someone is "Fully nude" or wearing "Pants at most" and has the "Required Belief" (Meme/Precept/or None, configurable in options), they will gain:
+
 1. 50% Melee Dodge (40% when wearing pants)
 2. 50% Ranged Evasion (40% when wearing pants)
 3. 20% Movement Speed when Drafted (15% when wearing pants)
-(Configurable in the options!)
+
+(Values configurable in the options!)
 
 Instead of tanking damage through armor, Nudist's rely on sheer evasion and speed. While risky, hopefully this makes a Nudist playthrough a viable alternative!
 
@@ -39,7 +41,7 @@ Credits to: personal ami and Ninomae Ina'nis for the artwork used in the thumbna
   <modDependencies>
     <li>
       <packageId>Ludeon.RimWorld.Ideology</packageId>
-      <displayName>Ideology DLC</displayName>
+      <displayName>Rimworld Ideology</displayName>
     </li>
     <li>
       <packageId>brrainz.harmony</packageId>
