@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <NudistsEvasion_Title>Fuu's Nudist's Evasion</NudistsEvasion_Title>
+  <NudistsEvasion_Label>Nudist's Evasion</NudistsEvasion_Label>
+  <NudistsEvasion_RequiredIdeology>Required Belief to become active:</NudistsEvasion_RequiredIdeology>
+  <NudistsEvasion_Meme>"Nudism" Meme</NudistsEvasion_Meme>
+  <NudistsEvasion_Precept>"Fully nude" or "Pants at most" Precept</NudistsEvasion_Precept>
+  <NudistsEvasion_None>No Belief Required</NudistsEvasion_None>
+  <NudistsEvasion_SettingsDescription>Bonus applied when someone is "Fully nude" and has the "Required Belief":</NudistsEvasion_SettingsDescription>
+  <NudistsEvasion_SettingsDescriptionTwo>Bonus applied when someone is wearing "Pants at most" and has the "Required Belief":</NudistsEvasion_SettingsDescriptionTwo>
+  <NudistsEvasion_MeleeDodge>Melee dodge chance</NudistsEvasion_MeleeDodge>
+  <NudistsEvasion_RangedEvade>Ranged evasion chance</NudistsEvasion_RangedEvade>
+  <NudistsEvasion_StatsDesc>An additional chance for melee damage to miss (multiplicative) due to nudist's evasion:
+
+  Bonus melee dodge chance: {0}%
+
+An additional chance for ranged damage to miss (multiplicative) due to nudist's evasion:
+
+  Bonus ranged evasion chance: {1}%</NudistsEvasion_StatsDesc>
+  <NudistsEvasion_Full>Full</NudistsEvasion_Full>
+  <NudistsEvasion_HasPants>Wearing pants</NudistsEvasion_HasPants>
+  <NudistsEvasion_NotActive>Not active</NudistsEvasion_NotActive>
+  <NudistsEvasion_DisableSpeedBonus>Disable "Nudist's Swiftness" buff</NudistsEvasion_DisableSpeedBonus>
+  <NudistsEvasion_ResetAll>Reset All</NudistsEvasion_ResetAll>
+</LanguageData>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>[Fuu] Nudist's Evasion</name>
+  <author>Fuu Chan</author>
+  <packageId>Fuu.NudistsEvasion</packageId>
+  <description>
+To the naive space dweller, it would be easy to rule out Rimworld's nudist tribes as simple primatives. But in reality, they are more akin to body cults; Ideologies dedicated to perfecting the body.
+
+Intense daily training, physical competitions, competitive sports, monster hunts, and gladiator fights. Starting from childhood they begin their training.
+
+While there are obvious disadvantages to not having armor or protective clothing, it would be a huge mistake to underestimate the speed, agility, and fighting prowess of these lithe warriors.
+
+When someone is "Fully nude" or wearing "Pants at most" and has the "Required Belief" (Meme/Precept/or None), they will gain:
+1. 50% Melee Dodge (40% when wearing pants)
+2. 50% Ranged Evasion (40% when wearing pants)
+3. 20% Movement Speed when Drafted (15% when wearing pants)
+(Configurable in the options!)
+
+Instead of tanking damage through armor, Nudist's rely on sheer evasion and speed. While risky, hopefully this makes a Nudist playthrough a viable alternative!
+
+(Calculations follow the vanilla ranged accuracy formula, multiplicative, so there will never be a 100% chance to dodge or 100% chance to miss)
+
+*Optimized for performance.
+*Safe to add mid-game.
+*Safe to remove mid-game, but undraft everyone first.
+*Humanoid Alien Races' races compatible.
+*Rocketman compatible.
+*Rimthreaded compatible.
+*NOT Compatible with CE. They use their own combat system.
+*No other known conflicts.
+
+Github Link: https://github.com/tenguin/Rimworld_NudistsEvasion
+
+Credits to: personal ami and Ninomae Ina'nis for the artwork used in the thumbnail and tanosii_chan for the upvote animation! Give them a visit!
+  </description>
+  <supportedVersions>
+    <li>1.3</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>Ludeon.RimWorld.Ideology</packageId>
+      <displayName>Ideology DLC</displayName>
+    </li>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+</ModMetaData>
