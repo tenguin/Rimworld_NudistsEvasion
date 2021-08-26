@@ -12,15 +12,15 @@ While there are obvious disadvantages to not having armor or protective clothing
 
 When someone is "Fully nude" or wearing "Pants at most" and has the "Required Belief" (Meme/Precept/or None, configurable in options), they will gain:
 
-1. 50% Melee Dodge (40% when wearing pants)
-2. 50% Ranged Evasion (40% when wearing pants)
+1. 40% Melee Dodge (30% when wearing pants)
+2. 40% Ranged Evasion (30% when wearing pants)
 3. 20% Movement Speed when Drafted (15% when wearing pants)
 
 (Values configurable in the options!)
 
 Instead of tanking damage through armor, Nudist's rely on sheer evasion and speed. While risky, hopefully this makes a Nudist playthrough a viable alternative!
 
-(Calculations follow the vanilla ranged accuracy formula, multiplicative, so there will never be a 100% chance to dodge or 100% chance to miss)
+(Calculations follow the vanilla ranged accuracy formula, with diminishing returns, so there will never be a 100% chance to dodge or 100% chance to miss)
 
 *Optimized for performance.
 *Safe to add mid-game.

@@ -15,20 +15,20 @@ namespace NudistsEvasion
         public static RequiredIdeologyOptions RequiredIdeology;
         private static void Initialize()
         {
-            NudeMeleeDodge = 0.5f;
-            NudeRangedEvade = 0.5f;
-            PantsOnlyMeleeDodge = 0.4f;
-            PantsOnlyRangedEvade = 0.4f;
+            NudeMeleeDodge = 0.4f;
+            NudeRangedEvade = 0.4f;
+            PantsOnlyMeleeDodge = 0.3f;
+            PantsOnlyRangedEvade = 0.3f;
             DisableSpeedBonus = false;
             RequiredIdeology = RequiredIdeologyOptions.Meme;
         }
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref NudeMeleeDodge, "NudeMeleeDodge", 0.5f);
-            Scribe_Values.Look(ref NudeRangedEvade, "NudeRangedEvade", 0.5f);
-            Scribe_Values.Look(ref PantsOnlyMeleeDodge, "PantsOnlyMeleeDodge", 0.4f);
-            Scribe_Values.Look(ref PantsOnlyRangedEvade, "PantsOnlyRangedEvade", 0.4f);
+            Scribe_Values.Look(ref NudeMeleeDodge, "NudeMeleeDodge", 0.4f);
+            Scribe_Values.Look(ref NudeRangedEvade, "NudeRangedEvade", 0.4f);
+            Scribe_Values.Look(ref PantsOnlyMeleeDodge, "PantsOnlyMeleeDodge", 0.3f);
+            Scribe_Values.Look(ref PantsOnlyRangedEvade, "PantsOnlyRangedEvade", 0.3f);
             Scribe_Values.Look(ref DisableSpeedBonus, "DisableSpeedBonus", false);
             Scribe_Values.Look(ref RequiredIdeology, "RequiredIdeology", RequiredIdeologyOptions.Meme);
         }
