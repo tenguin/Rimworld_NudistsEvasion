@@ -6,11 +6,10 @@ namespace NudistsEvasion
     {
         public override void OnIntervalPassed(Pawn p, Hediff cause)
         {
-            if (p.Drafted && ConditionsUtility.FulfillsIdeologyRequirements(p) && !Settings.DisableSpeedBonus)
+            if (p.Drafted && ConditionsUtility.FulfillsFactionRequirements(p) && ConditionsUtility.FulfillsIdeologyRequirements(p) && !Settings.DisableSpeedBonus)
             {
-                bool fullyNude = ConditionsUtility.HasFullyNude(p);
-                bool hasPants = ConditionsUtility.HasPantsOnly(p);
-                if (fullyNude || hasPants)
+                float massPenalty = EvasionUtility.PenaltyMultiplierDueToApparelMass(p);
+                if (massPenalty > 0f)
                 {
                     Hediff firstHediffOfDef = p.health.hediffSet.GetFirstHediffOfDef(hediff);
                     if (firstHediffOfDef == null)
@@ -18,15 +17,7 @@ namespace NudistsEvasion
                         firstHediffOfDef = HediffMaker.MakeHediff(hediff, p);
                         p.health.AddHediff(firstHediffOfDef);
                     }
-
-                    if (fullyNude)
-                    {
-                        firstHediffOfDef.Severity = 1f;
-                    }
-                    else if (hasPants)
-                    {
-                        firstHediffOfDef.Severity = 0.25f;
-                    }
+                    firstHediffOfDef.Severity = massPenalty;
                 }
             }
         }

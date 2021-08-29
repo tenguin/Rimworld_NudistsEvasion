@@ -7,9 +7,16 @@ namespace NudistsEvasion
     {
         public static bool FulfillsIdeologyRequirements(Pawn p)
         {
+            if (!ModsConfig.IdeologyActive)
+                return true;
+
             if (p?.Ideo != null)
             {
-                if (Settings.RequiredIdeology == Settings.RequiredIdeologyOptions.Meme && p.Ideo.HasMeme(MemeDefOf.Nudism))
+                if (Settings.RequiredIdeology == Settings.RequiredIdeologyOptions.None)
+                {
+                    return true;
+                }
+                else if (Settings.RequiredIdeology == Settings.RequiredIdeologyOptions.Meme && p.Ideo.HasMeme(MemeDefOf.Nudism))
                 {
                     return true;
                 }
@@ -24,39 +31,18 @@ namespace NudistsEvasion
                         p.gender == Gender.Female)
                         return true;
                 }
-                else if (Settings.RequiredIdeology == Settings.RequiredIdeologyOptions.None)
-                {
-                    return true;
-                }
             }
             return false;
         }
 
-        public static bool HasFullyNude(Pawn p)
+        //Free colonist = Colonists and Controlled slaves, not rebelling slaves or prisoners.
+        public static bool FulfillsFactionRequirements(Pawn p)
         {
-            if (!HasUnnecessarilyCoveredBodyParts(p))
+            if (Settings.OnlyApplyToOwnFaction)
             {
-                return true;
+               return p.IsFreeColonist;
             }
-            return false;
-        }
-
-        public static bool HasPantsOnly(Pawn p)
-        {
-            if (!ThoughtWorker_Precept_AnyBodyPartButGroinCovered.HasCoveredBodyPartsButGroin(p))
-            {
-                return true;
-            }
-            return false;
-        }
-
-        private static bool HasUnnecessarilyCoveredBodyParts(Pawn p)
-        {
-            if (p.apparel != null && p.apparel.AnyClothing && PawnUtility.HasClothingNotRequiredByKind(p))
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
     }
 }

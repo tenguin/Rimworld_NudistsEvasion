@@ -16,46 +16,54 @@ namespace NudistsEvasion
             listingStandard.ColumnWidth = viewRect.width;
             listingStandard.Begin(viewRect);
 
-            //Evasion Sliders
             listingStandard.Gap(5f);
             listingStandard.Label("NudistsEvasion_SettingsDescription".Translate());
 
+            //Mass Penalty Slider
+            listingStandard.Label("     " + "NudistsEvasion_MaximumMassPenalty".Translate() + ": " + FullMassPenaltyThreshold + " kg");
+            FullMassPenaltyThreshold = (float)Math.Round(listingStandard.Slider(FullMassPenaltyThreshold, 0, maxMass), 0, MidpointRounding.AwayFromZero);
+
+            //Evasion Sliders
             listingStandard.Label("     " + "NudistsEvasion_MeleeDodge".Translate() + ": " + NudeMeleeDodge * 100f + "%");
-            NudeMeleeDodge = (float)Math.Round(listingStandard.Slider(NudeMeleeDodge, 0, maxChance), 2);
+            NudeMeleeDodge = (float)Math.Round(listingStandard.Slider(NudeMeleeDodge, 0, maxChance), 2, MidpointRounding.AwayFromZero);
 
 
             listingStandard.Label("     " + "NudistsEvasion_RangedEvade".Translate() + ": " + NudeRangedEvade * 100f + "%");
-            NudeRangedEvade = (float)Math.Round(listingStandard.Slider(NudeRangedEvade, 0, maxChance), 2);
+            NudeRangedEvade = (float)Math.Round(listingStandard.Slider(NudeRangedEvade, 0, maxChance), 2, MidpointRounding.AwayFromZero);
 
-            listingStandard.Gap(40f);
-            listingStandard.Label("NudistsEvasion_SettingsDescriptionTwo".Translate());
-            listingStandard.Label("     " + "NudistsEvasion_MeleeDodge".Translate() + ": " + PantsOnlyMeleeDodge * 100f + "%");
-            PantsOnlyMeleeDodge = (float)Math.Round(listingStandard.Slider(PantsOnlyMeleeDodge, 0, maxChance), 2);
-
-            listingStandard.Label("     " + "NudistsEvasion_RangedEvade".Translate() + ": " + PantsOnlyRangedEvade * 100f + "%");
-            PantsOnlyRangedEvade = (float)Math.Round(listingStandard.Slider(PantsOnlyRangedEvade, 0, maxChance), 2);
+            //Multiplicative note
+            listingStandard.Gap(5f);
+            listingStandard.Label("NudistsEvasion_MultiplicativeNote".Translate());
 
             //Required Ideology Dropdown
             listingStandard.Gap(30f);
-            if (listingStandard.ButtonTextLabeled("NudistsEvasion_RequiredIdeology".Translate(), TranslateRequiredIdeologyOptions(RequiredIdeology)))
+            if (ModsConfig.IdeologyActive)
             {
-                List<FloatMenuOption> menuOptions = new List<FloatMenuOption>();
-                foreach (RequiredIdeologyOptions currentOption in Enum.GetValues(typeof(RequiredIdeologyOptions)))
+                if (listingStandard.ButtonTextLabeled("NudistsEvasion_RequiredIdeology".Translate(), TranslateRequiredIdeologyOptions(RequiredIdeology)))
                 {
-                    menuOptions.Add(new FloatMenuOption(TranslateRequiredIdeologyOptions(currentOption), delegate
+                    List<FloatMenuOption> menuOptions = new List<FloatMenuOption>();
+                    foreach (RequiredIdeologyOptions currentOption in Enum.GetValues(typeof(RequiredIdeologyOptions)))
                     {
-                        if (RequiredIdeology != currentOption)
+                        menuOptions.Add(new FloatMenuOption(TranslateRequiredIdeologyOptions(currentOption), delegate
                         {
-                            RequiredIdeology = currentOption;
-                        }
-                    }));
+                            if (RequiredIdeology != currentOption)
+                            {
+                                RequiredIdeology = currentOption;
+                            }
+                        }));
+                    }
+                    Find.WindowStack.Add(new FloatMenu(menuOptions));
                 }
-                Find.WindowStack.Add(new FloatMenu(menuOptions));
             }
+
+            //Disable Only Apply to Own Faction Checkbox
+            listingStandard.Gap(5f);
+            listingStandard.CheckboxLabeled("NudistsEvasion_OnlyApplyToOwnFaction".Translate() + ":", ref OnlyApplyToOwnFaction);
 
             //Disable Speed Bonus Checkbox
             listingStandard.Gap(5f);
             listingStandard.CheckboxLabeled("NudistsEvasion_DisableSpeedBonus".Translate() + ":", ref DisableSpeedBonus);
+
 
             //Reset
             listingStandard.Gap(120f);

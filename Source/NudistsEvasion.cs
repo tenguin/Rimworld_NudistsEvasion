@@ -9,10 +9,7 @@ namespace NudistsEvasion
 		public NudistsEvasion(ModContentPack content) : base(content)
 		{
 			Harmony harmony = new Harmony(content.PackageId);
-			if (ModsConfig.IdeologyActive)
-			{
-				harmony.PatchAll();
-            }
+			harmony.PatchAll();
 			GetSettings<Settings>();
 		}
 		public override string SettingsCategory()
