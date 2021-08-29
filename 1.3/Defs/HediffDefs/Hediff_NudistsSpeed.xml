@@ -4,7 +4,7 @@
     <defName>NudistsEvasion_NudistsSpeed</defName>
     <label>nudist's swiftness</label>
     <hediffClass>HediffWithComps</hediffClass>
-    <description>Combat movement speed is increased due to having zero encumberance and high physical fitness.</description>
+    <description>Combat movement speed is increased due to having low total apparel mass.</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <isBad>false</isBad>
     <maxSeverity>1</maxSeverity>
@@ -15,23 +15,48 @@
     </comps>
     <stages>
       <li>
-    <label>wearing pants</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.03</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.25</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.06</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.5</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.09</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.75</minSeverity>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>0.12</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>1</minSeverity>
         <capMods>
           <li>
             <capacity>Moving</capacity>
             <offset>0.15</offset>
           </li>
-        </capMods>      
-      </li>
-      <li>
-    <label>full</label>
-        <minSeverity>0.5</minSeverity>
-        <capMods>
-          <li>
-            <capacity>Moving</capacity>
-            <offset>0.2</offset>
-          </li>
-        </capMods>      
+        </capMods>
       </li>
     </stages>
   </HediffDef>

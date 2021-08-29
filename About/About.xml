@@ -4,23 +4,26 @@
   <author>Fuu Chan</author>
   <packageId>Fuu.NudistsEvasion</packageId>
   <description>
-To the naive space dweller, it would be easy to rule out Rimworld's nudist tribes as simple primatives. But in reality, they are more akin to body cults; Ideologies dedicated to perfecting the body.
+~2.0 update!
+Dodge and evasion have been reworked to scale based on "Apparel Mass", which enables all types of light armor evasion builds instead of being useful only for nudism playthroughs!
+In additon, balance has been adjusted after mathing and testing various values. Existing users are recommended to the go the mod options and press "Reset" to update to the latest values!
 
-Intense daily training, physical competitions, competitive sports, monster hunts, and gladiator fights. Starting from childhood they begin their training.
+Backstory:
+While there are obvious disadvantages to not having armor or protective clothing, it would be a mistake to underestimate the speed, agility, and footwork of an unhindered warrior. 
 
-While there are obvious disadvantages to not having armor or protective clothing, it would be a huge mistake to underestimate the speed, agility, and fighting prowess of these lithe warriors.
+To increase the diversity of apparel choices and viability of nudist playthroughs, this mod gives lightly armored and naked colonists a bonus to their melee dodge and a new ranged evasion mechanic.
 
-When someone is "Fully nude" or wearing "Pants at most" and has the "Required Belief" (Meme/Precept/or None, configurable in options), they will gain:
+Primary Changes:
+When someone has an equipped apparel mass of less than 6 kg (configurable in options), they will increasingly gain the following bonuses until reaching the maximum bonus when they're fully naked:
+1. 40% Melee dodge.
+2. 40% Ranged evasion.
+3. 15% Movement speed when drafted.
+(The ability to dodge and evade goes down as colonists' movement ability goes down!)
+(Values also configurable in the options).
 
-1. 40% Melee Dodge (30% when wearing pants)
-2. 40% Ranged Evasion (30% when wearing pants)
-3. 20% Movement Speed when Drafted (15% when wearing pants)
+Instead of only wearing heavy armor, dodge/evasion builds using lighter armors are now possible! While potentially riskier, lightly armored and Nudist playthroughs are now very much a viable alternative!
 
-(Values configurable in the options!)
-
-Instead of tanking damage through armor, Nudist's rely on sheer evasion and speed. While risky, hopefully this makes a Nudist playthrough a viable alternative!
-
-(Calculations follow the vanilla ranged accuracy formula, with diminishing returns, so there will never be a 100% chance to dodge or 100% chance to miss)
+(Bonuses apply multiplicatively to the existing accuracy formula, so there will never be a 100% chance to dodge or for a shot to miss).
 
 *Optimized for performance.
 *Safe to add mid-game.
@@ -39,10 +42,6 @@ Credits to: personal ami and Ninomae Ina'nis for the artwork used in the thumbna
     <li>1.3</li>
   </supportedVersions>
   <modDependencies>
-    <li>
-      <packageId>Ludeon.RimWorld.Ideology</packageId>
-      <displayName>Rimworld Ideology</displayName>
-    </li>
     <li>
       <packageId>brrainz.harmony</packageId>
       <displayName>Harmony</displayName>

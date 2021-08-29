@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using System;
 using System.Collections.Generic;
 using Verse;
 
@@ -8,12 +9,12 @@ namespace NudistsEvasion
     [HarmonyPatch(typeof(Pawn), "SpecialDisplayStats")]
     internal static class Pawn_SpecialDisplayStats
     {
-        private static Pawn pawn;
+        private static Pawn p;
 
         [HarmonyPostfix]
         private static void SpecialDisplayStats(ref Pawn __instance)
         {
-            pawn = __instance;
+            p = __instance;
         }
 
         [HarmonyPostfix]
@@ -24,26 +25,20 @@ namespace NudistsEvasion
                 yield return item;
             }
 
-            if (pawn?.RaceProps != null && pawn.RaceProps.Humanlike && ConditionsUtility.FulfillsIdeologyRequirements(pawn))
+            if (p?.RaceProps != null && p.RaceProps.Humanlike && 
+                ConditionsUtility.FulfillsFactionRequirements(p) && ConditionsUtility.FulfillsIdeologyRequirements(p))
             {
-                string label;
-                if (ConditionsUtility.HasFullyNude(pawn))
-                {
-                    label = "NudistsEvasion_Full".Translate();
-                }
-                else if (ConditionsUtility.HasPantsOnly(pawn))
-                {
-                    label = "NudistsEvasion_HasPants".Translate();
-                }
-                else
-                {
-                    label = "NudistsEvasion_NotActive".Translate();
-                }    
-
-                float dodge = EvasionUtility.GetMeleeDodgeForNakedLevel(pawn) * 100f;
-                float evade = EvasionUtility.GetRangedEvadeForNakedLevel(pawn) * 100f;
-                yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, "NudistsEvasion_Label".Translate(), label, 
-                    "NudistsEvasion_StatsDesc".Translate(dodge, evade), 4101);
+                float bonusDodge = EvasionUtility.GetMeleeDodgeForNakedLevel(p) * 100f;
+                float bonusEvade = EvasionUtility.GetRangedEvadeForNakedLevel(p) * 100f;
+                float massPenalty = (float)Math.Round(1f - EvasionUtility.PenaltyMultiplierDueToApparelMass(p), 2, MidpointRounding.AwayFromZero) * 100f;
+                float movePenalty = (float)Math.Round(1f - EvasionUtility.PenaltyMultiplierDueToMovingStat(p), 2, MidpointRounding.AwayFromZero) * 100f;
+                string label = bonusDodge + "% dodge, " + bonusEvade + "% evade";
+                yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, "NudistsEvasion_Label".Translate(), label,
+                    "NudistsEvasion_StatsDesc".Translate(
+                        EvasionUtility.GetApparelMass(p), Settings.FullMassPenaltyThreshold, 
+                        Settings.NudeMeleeDodge * 100f, massPenalty, movePenalty, bonusDodge,
+                        Settings.NudeRangedEvade * 100f, bonusEvade) +
+                        "\n\n" + "NudistsEvasion_MultiplicativeNote".Translate(), 4101);
             }
         }
     }
