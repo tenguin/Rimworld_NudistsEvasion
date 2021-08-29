@@ -4,7 +4,7 @@
     <defName>NudistsEvasion_NudistsSpeed</defName>
     <label>nudist's swiftness</label>
     <hediffClass>HediffWithComps</hediffClass>
-    <description>Combat movement speed is increased due to having low total apparel mass.</description>
+    <description>Combat movement speed is increased due to having low equipped apparel mass.</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
     <isBad>false</isBad>
     <maxSeverity>1</maxSeverity>
