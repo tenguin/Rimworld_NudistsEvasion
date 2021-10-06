@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\DefOf\PreceptDefOf.cs" />
+    <Compile Include="Source\DefOf\ThingCategoryDefOf.cs" />
     <Compile Include="Source\HediffGivers\HediffGiver_NudistsSpeed.cs" />
     <Compile Include="Source\NudistsEvasion.cs" />
     <Compile Include="Source\Patches\Pawn_SpecialDisplayStats.cs" />
