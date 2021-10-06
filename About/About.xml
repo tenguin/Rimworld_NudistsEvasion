@@ -28,9 +28,13 @@ Instead of only wearing heavy armor, dodge/evasion builds using lighter armors a
 *NOT Compatible with CE. They use their own combat system.
 *No other known conflicts.
 
-~2.1 update: "Apparel Mass" no longer includes Utility items. Maximum movement speed buff when drafted increased to 20% from 15%. Apparel Mass in stats page shows decimal values now.
+~2.1 update: 
+"Apparel Mass" no longer includes Utility items. 
+Maximum movement speed buff when drafted increased to 20% from 15%. 
+Apparel Mass in stats page shows decimal values now.
 
-~2.0 update: Dodge and evasion have been reworked to scale based on "Apparel Mass", which enables all types of light armor evasion builds instead of being useful only for nudism playthroughs!
+~2.0 update: 
+Dodge and evasion have been reworked to scale based on "Apparel Mass", which enables all types of light armor evasion builds instead of being useful only for nudism playthroughs!
 In addition, balance has been adjusted after mathing and testing various values. Existing users are recommended to the go the mod options and press "Reset" to update to the latest values!
 
 Github Link: https://github.com/tenguin/Rimworld_NudistsEvasion
