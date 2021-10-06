@@ -35,9 +35,14 @@ namespace NudistsEvasion
                 string label = bonusDodge + "% dodge, " + bonusEvade + "% evade";
                 yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, "NudistsEvasion_Label".Translate(), label,
                     "NudistsEvasion_StatsDesc".Translate(
-                        EvasionUtility.GetApparelMass(p), Settings.FullMassPenaltyThreshold, 
-                        Settings.NudeMeleeDodge * 100f, massPenalty, movePenalty, bonusDodge,
-                        Settings.NudeRangedEvade * 100f, bonusEvade) +
+                        Math.Round(EvasionUtility.GetApparelMass(p), 2, MidpointRounding.AwayFromZero), 
+                        Settings.FullMassPenaltyThreshold, 
+                        Settings.NudeMeleeDodge * 100f,
+                        massPenalty, 
+                        movePenalty, 
+                        bonusDodge,
+                        Settings.NudeRangedEvade * 100f, 
+                        bonusEvade) +
                         "\n\n" + "NudistsEvasion_MultiplicativeNote".Translate(), 4101);
             }
         }

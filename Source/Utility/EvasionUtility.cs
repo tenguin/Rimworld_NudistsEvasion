@@ -58,7 +58,10 @@ namespace NudistsEvasion
                 List<Apparel> wornApparel = p.apparel.WornApparel;
                 for (int i = 0; i < wornApparel.Count; i++)
                 {
-                    apparelMass += wornApparel[i].GetStatValue(StatDefOf.Mass);
+                    if (!wornApparel[i].HasThingCategory(ThingCategoryDefOf.ApparelUtility))
+                    {
+                        apparelMass += wornApparel[i].GetStatValue(StatDefOf.Mass);
+                    }
                 }
             }
             return apparelMass;
