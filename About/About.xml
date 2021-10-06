@@ -4,10 +4,6 @@
   <author>Fuu Chan</author>
   <packageId>Fuu.NudistsEvasion</packageId>
   <description>
-~2.0 update!
-Dodge and evasion have been reworked to scale based on "Apparel Mass", which enables all types of light armor evasion builds instead of being useful only for nudism playthroughs!
-In additon, balance has been adjusted after mathing and testing various values. Existing users are recommended to the go the mod options and press "Reset" to update to the latest values!
-
 Backstory:
 While there are obvious disadvantages to not having armor or protective clothing, it would be a mistake to underestimate the speed, agility, and footwork of an unhindered warrior. 
 
@@ -17,7 +13,7 @@ Primary Changes:
 When someone has an equipped apparel mass of less than 6 kg (configurable in options), they will increasingly gain the following bonuses until reaching the maximum bonus when they're fully naked:
 1. 40% Melee dodge.
 2. 40% Ranged evasion.
-3. 15% Movement speed when drafted.
+3. 20% Movement speed when drafted.
 (The ability to dodge and evade goes down as colonists' movement ability goes down!)
 (Values also configurable in the options).
 
@@ -29,10 +25,13 @@ Instead of only wearing heavy armor, dodge/evasion builds using lighter armors a
 *Safe to add mid-game.
 *Safe to remove mid-game, but undraft everyone first.
 *Humanoid Alien Races' races compatible.
-*Rocketman compatible.
-*Rimthreaded compatible.
 *NOT Compatible with CE. They use their own combat system.
 *No other known conflicts.
+
+~2.1 update: "Apparel Mass" no longer includes Utility items. Maximum movement speed buff when drafted increased to 20% from 15%.
+
+~2.0 update: Dodge and evasion have been reworked to scale based on "Apparel Mass", which enables all types of light armor evasion builds instead of being useful only for nudism playthroughs!
+In addition, balance has been adjusted after mathing and testing various values. Existing users are recommended to the go the mod options and press "Reset" to update to the latest values!
 
 Github Link: https://github.com/tenguin/Rimworld_NudistsEvasion
 

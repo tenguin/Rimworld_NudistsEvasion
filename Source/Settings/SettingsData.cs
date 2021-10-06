@@ -6,7 +6,7 @@ namespace NudistsEvasion
     internal partial class Settings : ModSettings
     {
         private const float maxChance = 0.6f;
-        private const float maxMass = 10f;
+        private const float maxMass = 12f;
 
         public static float FullMassPenaltyThreshold;
         public static float NudeMeleeDodge;

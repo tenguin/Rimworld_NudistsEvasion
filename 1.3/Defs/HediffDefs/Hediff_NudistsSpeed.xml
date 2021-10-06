@@ -18,7 +18,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.03</offset>
+            <offset>0.04</offset>
           </li>
         </capMods>
       </li>
@@ -27,7 +27,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.06</offset>
+            <offset>0.08</offset>
           </li>
         </capMods>
       </li>
@@ -36,7 +36,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.09</offset>
+            <offset>0.12</offset>
           </li>
         </capMods>
       </li>
@@ -45,7 +45,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.12</offset>
+            <offset>0.16</offset>
           </li>
         </capMods>
       </li>
@@ -54,7 +54,7 @@
         <capMods>
           <li>
             <capacity>Moving</capacity>
-            <offset>0.15</offset>
+            <offset>0.20</offset>
           </li>
         </capMods>
       </li>
