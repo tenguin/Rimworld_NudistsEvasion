@@ -20,7 +20,7 @@ namespace NudistsEvasion
             NudeMeleeDodge = 0.4f;
             NudeRangedEvade = 0.4f;
             DisableSpeedBonus = false;
-            OnlyApplyToOwnFaction = false;
+            OnlyApplyToOwnFaction = true;
             RequiredIdeology = RequiredIdeologyOptions.None;
         }
         public override void ExposeData()
@@ -30,7 +30,7 @@ namespace NudistsEvasion
             Scribe_Values.Look(ref NudeMeleeDodge, "NudeMeleeDodge", 0.4f);
             Scribe_Values.Look(ref NudeRangedEvade, "NudeRangedEvade", 0.4f);
             Scribe_Values.Look(ref DisableSpeedBonus, "DisableSpeedBonus", false);
-            Scribe_Values.Look(ref OnlyApplyToOwnFaction, "OnlyApplyToOwnFaction", false);
+            Scribe_Values.Look(ref OnlyApplyToOwnFaction, "OnlyApplyToOwnFaction", true);
             Scribe_Values.Look(ref RequiredIdeology, "RequiredIdeology", RequiredIdeologyOptions.None);
         }
         public enum RequiredIdeologyOptions : byte

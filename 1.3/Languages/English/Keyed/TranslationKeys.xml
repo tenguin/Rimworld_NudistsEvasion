@@ -10,7 +10,7 @@
   <NudistsEvasion_MaximumMassPenalty>Maximum apparel mass</NudistsEvasion_MaximumMassPenalty>
   <NudistsEvasion_MeleeDodge>Melee dodge chance</NudistsEvasion_MeleeDodge>
   <NudistsEvasion_RangedEvade>Ranged evasion chance</NudistsEvasion_RangedEvade>
-  <NudistsEvasion_OnlyApplyToOwnFaction>Only apply to player controlled "Colonists and Slaves"</NudistsEvasion_OnlyApplyToOwnFaction>
+  <NudistsEvasion_OnlyApplyToOwnFaction>Only apply to player controlled "Colonists" and "Slaves"</NudistsEvasion_OnlyApplyToOwnFaction>
   <NudistsEvasion_DisableSpeedBonus>Disable "Nudist's Swiftness" buff</NudistsEvasion_DisableSpeedBonus>
   <NudistsEvasion_MultiplicativeNote>(Bonuses apply multiplicatively to the existing accuracy formula, so there will never be a 100% chance to dodge or for a shot to miss).</NudistsEvasion_MultiplicativeNote>
   <NudistsEvasion_StatsDesc>Current apparel mass: {0} kg
