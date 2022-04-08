@@ -28,6 +28,8 @@ Instead of only wearing heavy armor, dodge/evasion builds using lighter armors a
 *NOT Compatible with CE. They use their own combat system.
 *No other known conflicts.
 
+~2.1d update: Fixed Vanilla Factions Expanded: Pirates' Warcaskets not being recognized. Increased maximum mass/dodge/evade limit in the options for more freedom in customization.
+
 ~2.1c update: Added "DisappearsOnDeath" to the Nudist's Swiftness buff, to prevent it from being listed as a cause of death when a pawn dies due to another reason.
 
 ~2.1b update: Changed setting "Only apply to player controlled colonists and slaves" to default to True. Otherwise this mod can make certain humanoid-based raids stronger than intended since the extra evade/dodge isn't taken into account by the raid points system.
