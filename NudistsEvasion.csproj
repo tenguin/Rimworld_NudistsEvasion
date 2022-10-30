@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>1.3\Assemblies\</OutputPath>
+    <OutputPath>1.4\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,14 +25,14 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>1.3\Assemblies\</OutputPath>
+    <OutputPath>1.4\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Lib.Harmony.2.2.1\lib\net472\0Harmony.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.2.2\lib\net472\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -46,8 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Source\DefOf\PreceptDefOf.cs" />
-    <Compile Include="Source\DefOf\ThingCategoryDefOf.cs" />
     <Compile Include="Source\HediffGivers\HediffGiver_NudistsSpeed.cs" />
     <Compile Include="Source\NudistsEvasion.cs" />
     <Compile Include="Source\Patches\Pawn_SpecialDisplayStats.cs" />
@@ -57,14 +55,15 @@
     <Compile Include="Source\Settings\Settings.cs" />
     <Compile Include="Source\Settings\SettingsData.cs" />
     <Compile Include="Source\Utility\EvasionUtility.cs" />
-    <Compile Include="Source\Utility\ConditionsUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="1.3\Assemblies\NudistsEvasion.dll" />
     <Content Include="1.3\Assemblies\NudistsEvasion.pdb" />
-    <Content Include="1.3\Defs\HediffDefs\Hediff_NudistsSpeed.xml" />
-    <Content Include="1.3\Languages\English\Keyed\TranslationKeys.xml" />
-    <Content Include="1.3\Patches\HediffGiverSets.xml" />
+    <Content Include="Common\Defs\HediffDefs\Hediff_NudistsSpeed.xml" />
+    <Content Include="Common\Languages\English\Keyed\TranslationKeys.xml" />
+    <Content Include="Common\Patches\HediffGiverSets.xml" />
+    <Content Include="1.4\Assemblies\NudistsEvasion.dll" />
+    <Content Include="1.4\Assemblies\NudistsEvasion.pdb" />
     <Content Include="About\About.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +71,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"R:\Rimworld Modding Ideology\!MOD TRANSFER.bat"</PostBuildEvent>
+    <PostBuildEvent>"R:\Rimworld Modding Biotech\!MOD TRANSFER.bat"</PostBuildEvent>
   </PropertyGroup>
 </Project>

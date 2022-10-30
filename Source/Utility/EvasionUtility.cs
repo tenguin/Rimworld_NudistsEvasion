@@ -10,7 +10,7 @@ namespace NudistsEvasion
     {
         public static float GetRangedEvadeForNakedLevel(Pawn p)
         {
-            if (ConditionsUtility.FulfillsFactionRequirements(p) && ConditionsUtility.FulfillsIdeologyRequirements(p))
+            if (FulfillsFactionRequirements(p))
             {
                 return (float)Math.Round(Settings.NudeRangedEvade * PenaltyMultiplierDueToApparelMass(p) * PenaltyMultiplierDueToMovingStat(p), 2, MidpointRounding.AwayFromZero);
             }
@@ -19,7 +19,7 @@ namespace NudistsEvasion
 
         public static float GetMeleeDodgeForNakedLevel(Pawn p)
         {
-            if (ConditionsUtility.FulfillsFactionRequirements(p) && ConditionsUtility.FulfillsIdeologyRequirements(p))
+            if (FulfillsFactionRequirements(p))
             {
                 return (float)Math.Round(Settings.NudeMeleeDodge * PenaltyMultiplierDueToApparelMass(p) * PenaltyMultiplierDueToMovingStat(p), 2, MidpointRounding.AwayFromZero);
             }
@@ -67,6 +67,16 @@ namespace NudistsEvasion
                 }
             }
             return apparelMass;
+        }
+
+        //Free colonist = Colonists and Controlled slaves, not rebelling slaves or prisoners.
+        public static bool FulfillsFactionRequirements(Pawn p)
+        {
+            if (Settings.OnlyApplyToOwnFaction)
+            {
+                return p.IsFreeColonist;
+            }
+            return true;
         }
     }
 }
