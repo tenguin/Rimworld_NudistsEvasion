@@ -25,8 +25,7 @@ namespace NudistsEvasion
                 yield return item;
             }
 
-            if (p?.RaceProps != null && p.RaceProps.Humanlike && 
-                ConditionsUtility.FulfillsFactionRequirements(p) && ConditionsUtility.FulfillsIdeologyRequirements(p))
+            if (p?.RaceProps != null && p.RaceProps.Humanlike && EvasionUtility.FulfillsFactionRequirements(p))
             {
                 float bonusDodge = EvasionUtility.GetMeleeDodgeForNakedLevel(p) * 100f;
                 float bonusEvade = EvasionUtility.GetRangedEvadeForNakedLevel(p) * 100f;

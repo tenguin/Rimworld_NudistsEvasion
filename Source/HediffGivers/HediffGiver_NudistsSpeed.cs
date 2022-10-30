@@ -6,7 +6,7 @@ namespace NudistsEvasion
     {
         public override void OnIntervalPassed(Pawn p, Hediff cause)
         {
-            if (p.Drafted && ConditionsUtility.FulfillsFactionRequirements(p) && ConditionsUtility.FulfillsIdeologyRequirements(p) && !Settings.DisableSpeedBonus)
+            if (p.Drafted && EvasionUtility.FulfillsFactionRequirements(p) && !Settings.DisableSpeedBonus)
             {
                 float massPenalty = EvasionUtility.PenaltyMultiplierDueToApparelMass(p);
                 if (massPenalty > 0f)
