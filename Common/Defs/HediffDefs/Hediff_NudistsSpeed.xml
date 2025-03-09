@@ -6,14 +6,15 @@
     <hediffClass>HediffWithComps</hediffClass>
     <description>Combat movement speed is increased due to having low equipped apparel mass.</description>
     <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
-    <isBad>false</isBad>
     <maxSeverity>1</maxSeverity>
     <comps>
       <li Class="HediffCompProperties_Disappears">
         <disappearsAfterTicks>60</disappearsAfterTicks>
+        <showRemainingTime>false</showRemainingTime>
       </li>
       <li Class="HediffCompProperties_DisappearsOnDeath"/>
     </comps>
+    <isBad>false</isBad>
     <stages>
       <li>
         <capMods>
@@ -51,7 +52,7 @@
         </capMods>
       </li>
       <li>
-        <minSeverity>1</minSeverity>
+        <minSeverity>0.95</minSeverity>
         <capMods>
           <li>
             <capacity>Moving</capacity>

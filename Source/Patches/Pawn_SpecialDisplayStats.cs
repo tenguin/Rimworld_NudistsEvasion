@@ -29,9 +29,9 @@ namespace NudistsEvasion
             {
                 float bonusDodge = EvasionUtility.GetMeleeDodgeForNakedLevel(p) * 100f;
                 float bonusEvade = EvasionUtility.GetRangedEvadeForNakedLevel(p) * 100f;
-                float massPenalty = (float)Math.Round(1f - EvasionUtility.PenaltyMultiplierDueToApparelMass(p), 2, MidpointRounding.AwayFromZero) * 100f;
-                float movePenalty = (float)Math.Round(1f - EvasionUtility.PenaltyMultiplierDueToMovingStat(p), 2, MidpointRounding.AwayFromZero) * 100f;
-                string label = bonusDodge + "% dodge, " + bonusEvade + "% evade";
+                float massPenalty = (float)Math.Round(EvasionUtility.PenaltyMultiplierDueToApparelMass(p) - 1f, 2, MidpointRounding.AwayFromZero) * 100f;
+                float movePenalty = (float)Math.Round(EvasionUtility.PenaltyMultiplierDueToMovingStat(p) - 1f, 2, MidpointRounding.AwayFromZero) * 100f;
+                string label = bonusDodge + "NudistsEvasion_Dodge".Translate() + ", " + bonusEvade + "NudistsEvasion_Evade".Translate();
                 yield return new StatDrawEntry(StatCategoryDefOf.PawnCombat, "NudistsEvasion_Label".Translate(), label,
                     "NudistsEvasion_StatsDesc".Translate(
                         Math.Round(EvasionUtility.GetApparelMass(p), 2, MidpointRounding.AwayFromZero), 

@@ -12,7 +12,7 @@ namespace NudistsEvasion
         {
             if (FulfillsFactionRequirements(p))
             {
-                return (float)Math.Round(Settings.NudeRangedEvade * PenaltyMultiplierDueToApparelMass(p) * PenaltyMultiplierDueToMovingStat(p), 2, MidpointRounding.AwayFromZero);
+                return (float)Math.Round(Mathf.Clamp(Settings.NudeRangedEvade * PenaltyMultiplierDueToApparelMass(p) * PenaltyMultiplierDueToMovingStat(p), 0f, 0.85f), 2, MidpointRounding.AwayFromZero);
             }
             return 0f;
         }
@@ -21,7 +21,7 @@ namespace NudistsEvasion
         {
             if (FulfillsFactionRequirements(p))
             {
-                return (float)Math.Round(Settings.NudeMeleeDodge * PenaltyMultiplierDueToApparelMass(p) * PenaltyMultiplierDueToMovingStat(p), 2, MidpointRounding.AwayFromZero);
+                return (float)Math.Round(Mathf.Clamp(Settings.NudeMeleeDodge * PenaltyMultiplierDueToApparelMass(p) * PenaltyMultiplierDueToMovingStat(p), 0f, 0.85f), 2, MidpointRounding.AwayFromZero);
             }
             return 0f;
         }
@@ -41,13 +41,22 @@ namespace NudistsEvasion
             return Mathf.Clamp(1f - (GetApparelMass(p) / Settings.FullMassPenaltyThreshold), 0f, 1f);
         }
 
-        //Want 0% dodge at the incapableOfMoving threshold, which is at 15% moving stat in vanilla.
-        //Shift down then multiply so that input of 15% -> 0% and 100% -> 100%
         public static float PenaltyMultiplierDueToMovingStat(Pawn p)
         {
-            float penaltyMultiplier = p.health.capacities.GetLevel(PawnCapacityDefOf.Moving) - PawnCapacityDefOf.Moving.minForCapable;
-            penaltyMultiplier *= 1f / (1f - PawnCapacityDefOf.Moving.minForCapable);
-            return Mathf.Clamp(penaltyMultiplier, 0f, 1f);
+            float penaltyMultiplier;
+            float pawnMoveSpeed = p.health.capacities.GetLevel(PawnCapacityDefOf.Moving);
+            if (pawnMoveSpeed > 1f)
+            {
+                penaltyMultiplier = pawnMoveSpeed;
+            }
+            else
+            {
+                //Want 0% dodge at the incapableOfMoving threshold, which is at 15% moving stat in vanilla.
+                //Shift down then multiply so that input of 15% -> 0% and 100% -> 100%
+                penaltyMultiplier = pawnMoveSpeed - PawnCapacityDefOf.Moving.minForCapable;
+                penaltyMultiplier *= 1f / (1f - PawnCapacityDefOf.Moving.minForCapable);
+            }
+            return Mathf.Clamp(penaltyMultiplier, 0f, 2f);
         }
 
         public static float GetApparelMass(Pawn p)
@@ -59,7 +68,7 @@ namespace NudistsEvasion
                 for (int i = 0; i < wornApparel.Count; i++)
                 {
                     //Log.Message($"{p}: item: {wornApparel[i]}, thingCategories: {wornApparel[i]?.def?.thingCategories}, isUtility: {wornApparel[i].HasThingCategory(ThingCategoryDefOf.ApparelUtility)}, mass: {wornApparel[i].GetStatValue(StatDefOf.Mass)}"); 
-                    if (wornApparel[i]?.def?.thingCategories != null && wornApparel[i].HasThingCategory(ThingCategoryDefOf.ApparelUtility))
+                    if (wornApparel[i]?.def?.thingCategories != null && wornApparel[i].HasThingCategory(ApparelCategoryDefOf.ApparelUtility))
                     {
                         continue;
                     }
